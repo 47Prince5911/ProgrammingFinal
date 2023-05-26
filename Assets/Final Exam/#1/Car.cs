@@ -31,5 +31,18 @@ public class Car : MonoBehaviour
          * The Horizontal Axis should make the player rotate on the Vector3.back axis
          */
 
+        // Get horizontal and vertical input
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Calculate movement vector
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical) * moveSpeed;
+
+        // Apply movement to the rigidbody
+        rb.velocity = movement;
+
+
+
+
     }
 }
